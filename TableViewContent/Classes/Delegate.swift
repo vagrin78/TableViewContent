@@ -15,10 +15,12 @@ open class Delegate: NSObject, UITableViewDelegate {
     public init(dataSource: DataSource, tableView: UITableView) {
         self.dataSource = dataSource
         self.tableView = tableView
+        self.tableView.dataSource = dataSource
     }
 
     public func reload(_ dataSource: DataSource) {
         self.dataSource = dataSource
+        self.tableView.dataSource = dataSource
         tableView.reloadData()
     }
 
