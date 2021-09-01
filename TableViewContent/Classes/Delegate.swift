@@ -33,7 +33,7 @@ open class Delegate: NSObject, UITableViewDelegate {
         if let action = row.selectedAction {
             action(tableView, indexPath)
         }
-        else if let action = section.selectedAction {
+        if let action = section.selectedAction {
             action(tableView, indexPath)
         }
         if section.updateAfterSelected {
