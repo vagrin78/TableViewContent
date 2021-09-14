@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SkeletionView
+import SkeletonView
 
 // MRAK: SkeletionView -
 private protocol ISkeletion {
