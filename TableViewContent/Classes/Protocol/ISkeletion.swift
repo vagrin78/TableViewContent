@@ -13,7 +13,7 @@ private protocol ISkeletion {
     var isSkeletion: Bool { get set }
 }
 
-extension RowInfo: ISkeletion {
+extension Row: ISkeletion {
     public func skeletion() -> Self {
         isSkeletion = true
         return self
