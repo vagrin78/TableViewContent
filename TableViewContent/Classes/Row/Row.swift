@@ -18,6 +18,7 @@ open class Row<Cell: UITableViewCell>: RowRepresentation {
     public var selectedAction: ((UITableView, IndexPath) -> Void)?
     public var trailingSwipeActionsConfiguration: (() -> UISwipeActionsConfiguration?)?
     public var leadingSwipeActionsConfiguration: (() -> UISwipeActionsConfiguration?)?
+    public var isSkeletion: Bool = false
 
     public init(
         _ representation: CellRepresentation,
@@ -37,6 +38,7 @@ open class Row<Cell: UITableViewCell>: RowRepresentation {
         cell.accessoryType = configuration.accessoryType
         cell.editingAccessoryView = configuration.editingAccessoryView
         cell.editingAccessoryType = configuration.editingAccessoryType
+        cell.isSkeletion = isSkeletion
         defaultCellConfiguration(cell as! Cell, indexPath)
         configureCell?(cell as! Cell, indexPath, self)
     }
