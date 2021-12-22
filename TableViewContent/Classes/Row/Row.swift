@@ -72,7 +72,7 @@ open class Row<Cell: UITableViewCell>: RowRepresentation {
 
     @discardableResult
     open func didSelect(_ action: @escaping (UITableView, IndexPath, Row) -> Void) -> Self {
-        selectedAction = { tableView, indexPath in
+        selectedAction = { [unowned self] tableView, indexPath in
             action(tableView, indexPath, self)
         }
         return self
